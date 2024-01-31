@@ -1,0 +1,6 @@
+# Generated resources
+/public/
+/resources/_gen/
+
+# Locks
+.hugo_build.lock
