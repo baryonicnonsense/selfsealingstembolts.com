@@ -1,43 +1,69 @@
-baseURL = 'https://selfsealingstembolts.com/'
+baseURL = "https://selfsealingstembolts.com/"
 defaultContentLanguage = "en"
 languageCode = "en"
 
-title = "Life, Love, and the pursuit of automation"
+title = "Self-Sealing Stem Bolts"
 
 theme = "gokarna"
 
 # Automatically generate robots.txt
 enableRobotsTXT = true
 
+enableEmojis = true
+
+[params]
+  # avatar
+  avatarURL = "/images/avatar.jpg"
+  avatarSize = "size-l"
+
+  # home page tag line
+  description = "For the love of infrastructure, automation, and yamok sauce"
+  # one of popular or recent
+  showPostsOnHomePage = "recent"
+
 [menu]
   [[menu.main]]
-    # Unique identifier for a menu item
-    identifier = "posts"
-
-    url = "/posts/"
-
-    # You can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-
-    # You can add extra information after the name (HTML format is supported), such as icons
-    post = ""
-
-    # Display name
-    name = "Posts"
-
-    # Weights are used to determine the ordering
+    # menu bar text
+    name = "Home"
+    # prefix text with anything, here we use feather icons
+    pre = "<span data-feather='home'></span>"
+    # link destination
+    url = "/"
+    # menu bar ordering
     weight = 1
 
   [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
+    name = "Posts"
+    pre = "<span data-feather='book'></span>"
+    url = "/posts/"
     weight = 2
 
   [[menu.main]]
-    identifier = "github"
-    url = "https://github.com/baryonincnonsense"
+    name = "Projects"
+    pre = "<span data-feather='code'></span>"
+    url = "/projects/"
     weight = 3
 
-    # We use feather-icons: https://feathericons.com/
+  [[menu.main]]
+    name = "Tags"
+    pre = "<span data-feather='tag'></span>"
+    url = "/tags/"
+    weight = 4
+
+  [[menu.main]]
+    name = "About"
+    pre = "<span data-feather='user'></span>"
+    url = "/about/"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "github"
+    url = "https://github.com/baryonicnonsense"
+    weight = 6
     pre = "<span data-feather='github'></span>"
+
+  [[menu.main]]
+    identifier = "email"
+    url = "mailto:contact@selfsealingstembolts.com"
+    weight = 7
+    pre = "<span data-feather='mail'></span>"
