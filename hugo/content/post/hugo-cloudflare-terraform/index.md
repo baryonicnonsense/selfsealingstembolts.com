@@ -1,8 +1,15 @@
-+++
-title = 'Deploying a static site on Cloudflare Pages with Hugo and Terraform'
-date = 2024-01-31T23:12:43-05:00
-type = "post"
-+++
+---
+title: Deploying a static site on Cloudflare Pages with Hugo and Terraform
+description: Using the Hugo framework to build assets for a static website hosted on Cloudflare Pages, managed with Terraform
+slug: hugo-cloudflare-terraform
+date: 2024-02-01 00:00:00+0000
+categories:
+    - Terraform
+tags:
+    - terraform
+    - hugo
+    - cloudflare
+---
 
 This tutorial will detail the process of creating and hosting a static website on [Cloudflare Pages](https://pages.cloudflare.com/) with [Hugo](https://gohugo.io) and [Terraform](https://terraform.io). The described process is responsible for the generation of this website, the source code of which is contained in this [repo hosted on GitHub](https://github.com/baryonicnonsense/selfsealingstembolts.com).
 
@@ -51,31 +58,39 @@ The [documentation](https://gohugo.io/installation/) provided by the project its
 A few examples of some common Linux distributions, as well as macOS, are as follows:
 
 #### Debian/Ubuntu
-
-    sudo apt install hugo
+```bash
+sudo apt install hugo
+```
 
 #### Fedora/RedHat/CentOS
 
-    sudo dnf install hugo
-    
+```bash
+sudo dnf install hugo
+```
+
 #### Arch Linux
 
-    sudo pacman -S hugo
+```bash
+sudo pacman -S hugo
+```
     
 #### macOS (Homebrew)
-
-    brew install hugo
-        
+```bash
+brew install hugo
+```
 ### Initialization
     
 Once installed, it's time to initialize a new project. Create a new directory for the project - we'll use `~/Development/www/selfsealingstembolts.com` here. This directory will contain two directories: `terraform` and `hugo`, each containing the resources of its respective component.
     
-    mkdir -p ~/Development/www/selfsealingstembolts\.com/{terraform,hugo}
-    
-Move to the newly created project directory, and initialize a new site with Hugo.
+```bash
+mkdir -p ~/Development/www/selfsealingstembolts\.com/{terraform,hugo}
+```
 
-    cd ~/Development/www/selfsealingstembolts\.com
-    hugo new site ./hugo
+Move to the newly created project directory, and initialize a new site with Hugo.
+```bash
+cd ~/Development/www/selfsealingstembolts\.com
+hugo new site ./hugo
+```
 
 ### Theming
 
@@ -83,8 +98,9 @@ Next up, let's select a theme. This tutorial will use [Stacks](https://stack.jim
 > The Hugo project conveniently provides a [list of themes](https://themes.gohugo.io/) for your perusal. However, selecting a theme other than the one specified by this tutorial will alter some of the configuration elements and site structure described here.  
 
 Themes can be installed either as a Git submodule or a Hugo module. Installation as a Hugo module is the most canonical method, therefore it is the method we will use here. First, we must convert our project to a Hugo module.
-
-    cd hugo
-    hugo mod init github.com/<user>/<repo>
+```bash
+cd hugo
+hugo mod init github.com/<user>/<repo>
+```
 
 where `<user>` is your GitHub username and `<repo>` is the name of your git repository.

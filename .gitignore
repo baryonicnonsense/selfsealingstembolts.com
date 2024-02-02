@@ -2,8 +2,8 @@
 
 
 # Generated resources
-/public/
-/resources/_gen/
+/hugo/public/
+/hugo/resources/
 
 # Locks
 .hugo_build.lock
